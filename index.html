@@ -9,37 +9,50 @@
         body{
           background-color: aquamarine
         }
-        div#res{
-            margin-top: 50px;
+        div#res-som{
+            margin-top: 20px;
+        }
+        div#res-sub{
+            margin-top: 20px;
+        }
+        div#res-mul{
+            margin-top: 20px;
         }
         input{
             width: 100px;
-            height: 50px;
+            height: 30px;
         }
     
     </style>
 </head>
 <body>
-    <h1>Somando Valores</h1>
+    <center><h1>Calculadora</h1></center>
+    <h3>Somando Valores</h3>
     <input type="number" name="txtn1" id="txtn1"> +
     <input type="number" name="txtn2" id="txtn2">
     <input type="button" value="Somar" onclick="somar()">
     <div id='res-som'>Resultado</div>
 
-    <h1>Subtraindo Valores</h1>
-    <input type="number" name="txtn1" id="txtn3"> -
-    <input type="number" name="txtn2" id="txtn4">
-    <input type="button" value="Somar" onclick="menos()">
+    <h3>Subtraindo Valores</h3>
+    <input type="number" name="txtn3" id="txtn3"> -
+    <input type="number" name="txtn4" id="txtn4">
+    <input type="button" value="Subtrair" onclick="menos()">
     <div id='res-sub'>Resultado</div>
 
-    <h1>Multiplicando Valores</h1>
-    <input type="number" name="txtn1" id="txtn5"> x
-    <input type="number" name="txtn2" id="txtn6">
-    <input type="button" value="Somar" onclick="vezes()">
+    <h3>Multiplicando Valores</h3>
+    <input type="number" name="txtn5" id="txtn5"> x
+    <input type="number" name="txtn6" id="txtn6">
+    <input type="button" value="Multiplicar" onclick="vezes()">
     <div id='res-mul'>Resultado</div>
 
+    <h3>Dividindo Valores</h3>
+    <input type="number" name="txtn7" id="txtn7"> /
+    <input type="number" name="txtn8" id="txtn8">
+    <input type="button" value="Dividir" onclick="divisão()">
+    <div id='res-div'>Resultado</div>
 
     <script>
+        window.alert('Essa calculadora foi feita em código JS, e interface baseada no DOM(Document Object Model)')
         //Função para calcular soma
         function somar(){
             var tn1 = window.document.getElementById('txtn1')
@@ -69,6 +82,16 @@
             var n2 = Number(tn2.value)
             var s = n1*n2
             res.innerHTML = 'A multiplicação entre '+n1+' e '+n2+', é '+s
+        }
+         //Função para calcular divisão
+         function divisão(){
+            var tn1 = window.document.getElementById('txtn7')
+            var tn2 = window.document.getElementById('txtn8')
+            var res = window.document.getElementById('res-div')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1/n2
+            res.innerHTML = 'A divisão entre '+n1+' e '+n2+', é '+s
         }
     </script>
 </body>
